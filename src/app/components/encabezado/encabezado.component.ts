@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-encabezado',
@@ -8,10 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class EncabezadoComponent implements OnInit {
 
   @Input() titulo: string = "";
-
+  @Output() evento : EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  entrar(): void {
+    this.evento.emit();
+  }
 }
